@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "0d16779e-3d2e-41d3-a636-690785cc9923",
+		"name": "COURSE BOOKING API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23661340"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "USER LOGIN - POST METHOD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"henry@mail.com\",\r\n    \"password\" : \"Hello1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER REGISTRATION - POST METHOD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Loyd\",\r\n    \"lastName\" : \"S\",\r\n    \"email\" : \"loyd@mail.com\",\r\n    \"mobileNo\" : \"09123456789\",\r\n    \"password\" : \"loyd1234\",\r\n    \"isAdmin\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHECK EMAIL - POST METHOD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"john@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users/checkEmailExists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"checkEmailExists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user details from token",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users/details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "add new course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Vulcanizing\",\r\n    \"description\" : \"Study of volcanoes\",\r\n    \"price\" : 50000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/courses/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"courses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/courses/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"courses",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get active courses",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get course",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update single course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjIwMzc2Y2VkNmNkNmRlY2QzM2MxOSIsImVtYWlsIjoibG95ZEBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2NzM3ODQ4Nn0.JZR5Z1ebVK0Lhg5n1uh638xUUZu1eSjV6zkpTytO-js",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"HTML\",\r\n    \"description\" : \"how to make lumpia\",\r\n    \"price\" : 150000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/courses/63622e2c40f3a61e18b15f1c/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"courses",
+								"63622e2c40f3a61e18b15f1c",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archive single course",
+					"request": {
+						"method": "PATCH",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
